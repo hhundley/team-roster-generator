@@ -1,5 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const team = [];
 
 // Build arrays of questions for different employee types
 // Manager Questions
@@ -87,3 +91,61 @@ const menuQuestions = [
     },
    
 ]
+
+// Initialize app and build functions
+function menuPrompt() {
+    inquirer.prompt(menuQuestions)
+    .then((answers) => {
+        switch(answers.menuOption) {
+            case "Add an engineer":
+                engineerPrompt();
+                break
+            case "Add an intern":
+                internPrompt();
+                break
+            case "Finish building team":
+                finishTeam();
+                break
+        }
+    })
+}
+
+function engineerPrompt(){
+    inquirer.prompt(engineerQuestions)
+    .then((answers) => {
+    //   create a new engineer
+    const engineer = new Engineer(answers.engineerName,answers.engineerId,answers.engineerEmail,answers.github);
+    team.push(engineer);
+    console.log(engineer);
+    menuPrompt();
+    });
+}
+
+function internPrompt(){
+    inquirer.prompt(internQuestions)
+    .then((answers) => {
+    //   create a new engineer
+    const intern = new Intern(answers.internName,answers.internId,answers.internEmail,answers.school);
+    team.push(intern);
+    console.log(intern);
+    menuPrompt();
+    });
+}
+
+function init() {
+    inquirer.prompt(managerQuestions)
+    .then((answers) => {
+    //   create a new manager
+    const manager = new Manager(answers.managerName,answers.managerId,answers.managerEmail,answers.officeNumber);
+    team.push(manager);
+    console.log(manager);
+    menuPrompt();
+    });
+}
+
+function finishTeam() {
+    console.log('Finished');
+    console.log(team);
+    // write to file function w/ team as data
+}
+init();
