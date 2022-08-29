@@ -1,0 +1,92 @@
+function generateTeam(team) {
+    const html = [];
+    function renderManagerCard(manager) {
+        let managerCard = `
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${manager.name} (Manager)</h5>
+                <p class="card-text">ID:${manager.id}</p>
+                <p class="card-text">Office Number:${manager.officeNumber}</p>
+                <a href="mailto:${manager.email}" class="btn btn-primary">Email</a>
+            </div>
+        </div>
+        `;
+    html.push(managerCard);
+    }
+
+    function renderEngineerCard(engineer) {
+    let engineerCard = `
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${engineer.name} (Engineer)</h5>
+                <p class="card-text">ID:${engineer.id}</p>
+                <p class="card-text">Github: <a href = "https://github.com/${engineer.github}">${engineer.github}</a></p>
+                <a href="mailto:${engineer.email}" class="btn btn-primary">Email</a>
+            </div>
+        </div>
+        `;
+    html.push(engineerCard);
+    }
+
+    function renderInternCard(intern) {
+    let internCard = `
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">${intern.name} (Intern)</h5>
+                <p class="card-text">ID:${intern.id}</p>
+                <p class="card-text">School: ${intern.school}</p>
+                <a href="mailto:${intern.email}" class="btn btn-primary">Email</a>
+            </div>
+        </div>
+        `;
+    html.push(internCard);
+    }
+
+    for(let i = 0; i < team.length; i++) {
+       if (team[i].getRole() === "Manager") {
+            renderManagerCard(team[i]);
+       } 
+       if (team[i].getRole() === "Engineer") {
+        renderEngineerCard(team[i]);
+        }
+        if (team[i].getRole() === "Intern") {
+            renderInternCard(team[i]);
+        }
+    }
+    return html.join('');
+}
+
+function generateRoster(team) {
+    return `
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team</title>
+        <link rel="stylesheet" href="./src/reset.css" />
+        <link rel="stylesheet" href="./dist/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    </head>
+
+    <header class="jumbotron bg-cover text-white">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 font-weight-bold">The Team</h1>
+        </div>
+    </header>
+
+    <body>
+        <div class="row">
+            ${generateTeam(team)}
+        </div>
+    </body>
+
+      <!-- Footer -->
+      <footer>
+        <h3>Made with <span role="img" aria-label="heart">❤️</span></h3>
+    </footer>
+    `;
+    }
+
+    module.exports = generateRoster;

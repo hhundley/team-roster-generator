@@ -3,6 +3,7 @@ const fs = require('fs');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateRoster = require('./src/generateRoster.js');
 const team = [];
 
 // Build arrays of questions for different employee types
@@ -147,5 +148,10 @@ function finishTeam() {
     console.log('Finished');
     console.log(team);
     // write to file function w/ team as data
+    fs.writeFile("team.html", generateRoster(team), (err) => {
+        if (err) throw new Error(err);
+    
+        console.log("Roster successfully created.")
+      });
 }
 init();

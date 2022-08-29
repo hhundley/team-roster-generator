@@ -1,0 +1,16 @@
+header{
+    background: url("../src/ryan-duffy-8mbWSDki9so-unsplash.jpg");
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:center;
+    }
+
+footer {
+    text-align: center;
+}
+
+.card{
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
