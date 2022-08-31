@@ -8,6 +8,9 @@
   ## Screenshots
   ![screenshot](/src/Screen%20Shot%202022-08-30%20at%207.54.26%20PM.png "1")
   ![screenshot](/src/Screen%20Shot%202022-08-30%20at%207.54.35%20PM.png "2")
+
+  ## Recording
+  [See Link for screen capture of functioning application](https://drive.google.com/file/d/15cGc9r94DOzvG-0wAogHFCeTUUqFNKid/view)
   
   ## Table of Contents
   * [Installation](#installation)
