@@ -8,8 +8,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hhundley/team-roster-generator.git"
@@ -27,4 +28,5 @@
   "dependencies": {
     "inquirer": "^8.2.4"
   }
+  
 }
