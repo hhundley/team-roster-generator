@@ -1,4 +1,6 @@
+// function to use inquirer inputs and put into generated html.
 function generateTeam(team) {
+    // empty array to hold body of html
     const html = [];
     function renderManagerCard(manager) {
         let managerCard = `
@@ -11,6 +13,7 @@ function generateTeam(team) {
             </div>
         </div>
         `;
+    // adds manager card to html array
     html.push(managerCard);
     }
 
@@ -25,6 +28,7 @@ function generateTeam(team) {
             </div>
         </div>
         `;
+    // adds enginer card to html array
     html.push(engineerCard);
     }
 
@@ -39,6 +43,7 @@ function generateTeam(team) {
             </div>
         </div>
         `;
+    // adds intern card to html array
     html.push(internCard);
     }
 
@@ -53,9 +58,11 @@ function generateTeam(team) {
             renderInternCard(team[i]);
         }
     }
+    // combines elements in html array to be a cohesive block in body of html
     return html.join('');
 }
 
+// generates html that will be put into generated html file
 function generateRoster(team) {
     return `
 <!DOCTYPE html>
@@ -89,4 +96,5 @@ function generateRoster(team) {
     `;
     }
 
+    // exports module to be used by index
     module.exports = generateRoster;

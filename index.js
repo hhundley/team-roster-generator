@@ -1,3 +1,4 @@
+// Importing necessary classes and setting up variables/constants
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require('./lib/Manager');
@@ -110,7 +111,7 @@ function menuPrompt() {
         }
     })
 }
-
+// show engineer questions when engineer is selected from menu
 function engineerPrompt(){
     inquirer.prompt(engineerQuestions)
     .then((answers) => {
@@ -121,18 +122,18 @@ function engineerPrompt(){
     menuPrompt();
     });
 }
-
+// show intern questions when intern is selected from menu
 function internPrompt(){
     inquirer.prompt(internQuestions)
     .then((answers) => {
-    //   create a new engineer
+    //   create a new intern
     const intern = new Intern(answers.internName,answers.internId,answers.internEmail,answers.school);
     team.push(intern);
     console.log(intern);
     menuPrompt();
     });
 }
-
+// initialize the app by setting a manager
 function init() {
     inquirer.prompt(managerQuestions)
     .then((answers) => {
@@ -143,7 +144,7 @@ function init() {
     menuPrompt();
     });
 }
-
+// finish team and write roster html file
 function finishTeam() {
     console.log('Finished');
     console.log(team);

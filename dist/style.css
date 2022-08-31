@@ -1,3 +1,4 @@
+/* styling header */
 header{
     background: url("../src/ryan-duffy-8mbWSDki9so-unsplash.jpg");
     background-repeat:no-repeat;
@@ -5,10 +6,12 @@ header{
     background-position:center;
     }
 
+/* styling footer */
 footer {
     text-align: center;
 }
 
+/* styling card class */
 .card{
     margin: 50px;
     display: flex;
