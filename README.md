@@ -4,6 +4,10 @@
   
   ## Description
   An application built to take user inputs via the inquirer package from npm and use these inputs to build a team roster that is displayed in a well designed html page. The app is designed to be run using nodeJS. OOP helped structure and organize the application in an efficient way. Jest was used to run unit tests on the application.
+
+  ## Screenshots
+  ![screenshot](/src/Screen%20Shot%202022-08-30%20at%207.54.26%20PM.png "1")
+  ![screenshot](/src/Screen%20Shot%202022-08-30%20at%207.54.35%20PM.png "2")
   
   ## Table of Contents
   * [Installation](#installation)
@@ -30,7 +34,7 @@
   * [GitHub](https://www.github.com/hhundley)
   
   ## License
-  This project is  licensed.
+  This project is not licensed.
 
   <div align="center">Made with blood, sweat, tears, and ❤️
   <div align="center">Rock on 🤘
